@@ -42,7 +42,7 @@ class gerarRelatorioController extends Controller
         $output = '
         <h4>S.U.E - Sistema de Urna Eletrônica</h4>
         <h2 align="center">Relatório</h2>
-        <h3>Dados da Eleição</h3>
+        <h3>Dados da Eleição - Candidatos</h3>
         <table width="100%" style="border-collapse: collapse; border: 0px;">
         <tr>
             <th style="border: 1px solid; padding:12px;" width="15%">Nome</th>

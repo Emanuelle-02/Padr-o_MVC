@@ -24,13 +24,13 @@ class CadidatosController extends Controller
         return view('criar_candidato');
 
     }
-
+    //checa se o usuário está logado e se eh_admin. Se for, pode inserir candidatos no sistema, se não, terá o acesso negado.
     public function criar_candidato(){
         if(Auth::check() && Auth::user()->eh_admin){
             return view('criar_candidato');
         }
         else{
-            return \redirect('home')->with('flashWarning', 'Você não tem autorização para acessar essa página!');
+            return \redirect('home')->with('flashWarning', 'Você não tem permissão para acessar essa página!');
         }
     }
 }

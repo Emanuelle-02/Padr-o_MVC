@@ -22,7 +22,7 @@
 
                 <div class="form-group row">
                     <div class="col-sm-10" style="margin: 0 auto">
-                        <button type="submit" class="btn btn-block btn-success">CONFIRMA</button>
+                        <button type="submit" class="btn btn-block btn-success"> CONFIRMA </button>
                     </div>
                 </div>
             </div>

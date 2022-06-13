@@ -14,10 +14,10 @@ class registrarVotoController extends Controller
     }
 
     public function paginaVotacao(){
-        //checa se um usário está logado, se não estiver, manda para página de cadastro    
+        //checa se um usário está logado. Se não estiver, é redirecionado para página de cadastro    
         if(!Auth::check()){
             return \redirect('/register');
-        }//checa se o eleitor já votou, se não tiver votado é direcionado a página de votação
+        }//checa se o eleitor já votou. Se não votou, é direcionado para página de votação
         else if(!Auth::user()->ja_votou){
             $candidatos = DB::table('candidatos')->get();
             return view('registrarVotoView',['candidatos'=> $candidatos]);
@@ -41,7 +41,7 @@ class registrarVotoController extends Controller
                     'votos'=>DB::raw("votos + 1")
                 ]);
         
-        // muda o valor de ja_votou de 0 para 1 quando o eleitor clicar em confirmar
+        // muda o valor de ja_votou de 0 para 1 quando o eleitor clicar em confirmar o voto.
         DB::table('users')->where('id',Auth::user()->id)
                     ->update([
                         'ja_votou'=>1
